@@ -14,7 +14,7 @@ $(BUILD_DIR)/floppy.img: bootloader kernel
 	#mkfs.fat -F 12 -n "boot" $(BUILD_DIR)/floppy.img
 	# if macOS
 	newfs_msdos -F 12 -f 2880 $(BUILD_DIR)/floppy.img
-	dd if=$(BUILD_DIR)/bootloader.bin of=$(BUILD_DIR)floppy.img conv=notrunc
+	dd if=$(BUILD_DIR)/bootloader.bin of=$(BUILD_DIR)/floppy.img conv=notrunc
 	mcopy -i $(BUILD_DIR)/floppy.img $(BUILD_DIR)/kernel.bin "::kernel.bin"
 	# older code, see git commits
 	# i know it's bad to keep old code, but this is just for example
